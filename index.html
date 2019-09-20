@@ -1,20 +1,38 @@
-<!DOCTYPE HTML>
-<!--
-	Hungry Pig by Premio Oscar
-	
--->
+<!DOCTYPE html>
+<html lang="es">
 
-<html lang="es">        <!-- abre la página -->
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <link rel="stylesheet" href="game.css">
+    <script src="phaser.min.js"></script>
 
-<head>      <!-- `head` son los datos del documento -->
-  <meta charset="UTF-8">
-  
-  <title>Hungry Pig </title>
+    <title>¡Juego con Phaser!</title>
 </head>
 
-<body>      <!-- cuerpo del documento, lo que se ve -->
-  
+<body>
+    <h1>Juego con Phaser</h1>
+    <script type="module">
+        import Game from './game.js';
+
+        var config = {
+            type: Phaser.AUTO,
+            width: 1400,
+            height: 800,
+            pixelArt: true,
+            input: {
+                gamepad: true
+            },
+            scale: {
+                mode: Phaser.Scale.FIT,
+                autoCenter: Phaser.Scale.CENTER_BOTH
+            },
+            scene: [ Game ],
+            physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
+        };
+        new Phaser.Game(config);
+    </script>
 </body>
 
-
-</html> <!-- cierra la página -->
+</html>
