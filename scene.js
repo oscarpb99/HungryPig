@@ -1,5 +1,5 @@
 import Player from './player.js'
-import Base from './base.js'
+import Platform from './platform.js'
 
 export default class Scene extends Phaser.Scene {
 
@@ -9,8 +9,14 @@ export default class Scene extends Phaser.Scene {
 
     create(){
         this.stars= 10;
-        this.playerGreen= new Player(this,200,300);
-        this.suelo = this.add.group ();
+        this.player= new Player(this,200,300);
+        this.base = this.add.group ();
+
+        new Platform(this, this.player, this.bases, 150, 350);
+        new Platform(this, this.player, this.bases, 850, 350);
+        new Platform(this, this.player, this.bases, 500, 200);
+        new Platform(this, this.player, this.bases, 150, 100);
+        new Platform(this, this.player, this.bases, 850, 100);
         
         
     }
