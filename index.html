@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./Imagenes/Personaje.CerdoVerde.jpg" type="image/jpg" />
+    <link rel="shortcut icon" href="CerdoVerde.jpg" type="image/jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
     <link rel="stylesheet" href="game.css">
     <script src="phaser.min.js"></script>
@@ -38,8 +38,8 @@
                 gamepad: true
             },
             scale: {
-                //mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+                mode: Phaser.Scale.FIT,
+                autoCenter: Phaser.Scale.CENTER_BOTH
             },
             scene: [ Game,Scene,End ],
             physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
